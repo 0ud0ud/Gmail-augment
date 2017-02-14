@@ -1,7 +1,6 @@
 /*
  * Check the Local storage to get the emails from the feed
  * Then add the element to the popup html -> display.html
- * 
  */
 
 if (localStorage != "undefined") { //Always true on Chrome
@@ -33,5 +32,10 @@ if (localStorage != "undefined") { //Always true on Chrome
 		panelBody.innerHTML = localStorage.getItem("summary" + i);
 		div.appendChild(panelTitle);
 		div.appendChild(panelBody);
+
+		//Display only 20 new emails
+		if (i == 20) {
+			i = nEmails;
+		}
 	}
 }
