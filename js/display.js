@@ -1,11 +1,19 @@
-if (localStorage != "undefined") {
+/*
+ * Check the Local storage to get the emails from the feed
+ * Then add the element to the popup html -> display.html
+ * 
+ */
+
+if (localStorage != "undefined") { //Always true on Chrome
+
 	var nEmails = localStorage.getItem("0");
-	var header = document.createElement('h2');
+	var header = document.getElementById('title');
 	var content = document.getElementById('content');
 
 	header.innerHTML = nEmails + ' New Messages';
 	content.appendChild(header);
 
+	//Populate the unread emails
 	for (var i = 0; i < nEmails; i++) {
 		var div = document.createElement('div');
 		var panelTitle = document.createElement('div');

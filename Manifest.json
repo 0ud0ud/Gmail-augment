@@ -21,11 +21,8 @@
 	],
 	"permissions": [
 		"activeTab",
-        "webRequestBlocking",
-        "webRequest",
         "storage",
         "cookies",
-        "webNavigation",
         "tabs",
         "http://*/*",
         "https://*/*"
