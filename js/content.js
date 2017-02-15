@@ -33,55 +33,6 @@ var locationHasChanged = function () {
 };
 
 
-//Event when location.href changes 
-window.onpopstate = locationHasChanged;
-
-firstCall();
-
-
-/*
-	Function when an email is opened
-	example: Unsubscribe function
-*/
-function emailOpened() {
-    //console.log("BLABLABLA");
-    unsubscribe();
-}
-
-
-/*
-	Function when an email is NOT opened
-	example: Task button
-*/
-function emailNotOpened() {
-    if (btnToAdd) {
-        addButton();
-    }
-}
-
-
-
-/*
-	Add a button to the Gmail DOM
-	Doing an Async call to let the DOM 
-    load before to insert the button.
-    This is just for testing purpose
-*/
-function addButton() {
-    setTimeout(function () {
-        var button = document.createElement("button");
-        wrapper = document.createElement("div");
-        button.id = "test";
-        button.innerHTML = "test";
-        button.className = "T-I J-J5-Ji nu T-I-ax7 L3";
-        $("#\\:5").append(button);
-        $("#test").click(function () {
-            alert("Just testing it does not do anything for the moment!");
-        });
-    }, 1000);
-}
-
-
 
 /*
 	Add an unsubcribe button when gmail does not provide one
@@ -243,3 +194,54 @@ var unsubscribe = function () {
         }
     }
 };
+
+
+
+//Event when location.href changes 
+window.onpopstate = locationHasChanged;
+
+firstCall();
+
+
+/*
+	Function when an email is opened
+	example: Unsubscribe function
+*/
+function emailOpened() {
+    // console.log("BLABLABLA");
+    unsubscribe();
+}
+
+
+/*
+	Function when an email is NOT opened
+	example: Task button
+*/
+function emailNotOpened() {
+    //to be fixed
+    /* if (btnToAdd) {
+        addButton();
+    }*/
+}
+
+
+
+/*
+	Add a button to the Gmail DOM
+	Doing an Async call to let the DOM 
+    load before to insert the button.
+    This is just for testing purpose
+*/
+function addButton() {
+    setTimeout(function () {
+        var button = document.createElement("button");
+        wrapper = document.createElement("div");
+        button.id = "test";
+        button.innerHTML = "test";
+        button.className = "T-I J-J5-Ji nu T-I-ax7 L3";
+        $("#\\:5").append(button);
+        $("#test").click(function () {
+            alert("Just testing it does not do anything for the moment!");
+        });
+    }, 1000);
+}
